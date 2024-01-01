@@ -18,6 +18,7 @@ touch docker-compose.yml
 
 ```yaml
 # docker-compose.yml
+# usage: docker-compose up
 
 version: "3"
 services:
@@ -40,6 +41,7 @@ touch docker-compose.yml
 
 ```yaml
 # docker-compose.yml
+# usage: docker-compose up
 
 version: "3"
 services:
