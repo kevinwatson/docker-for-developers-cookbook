@@ -6,10 +6,14 @@
 * [Chapter 2 - Docker Compose](020-chapter-02.md)
   * Introduction
   * Resources
-* [Chapter 3 - Databases](030-chapter-03.md)
+* [Chapter 3 - Console](030-chapter-03.md)
+  * Introduction
+  * Resources
+* [Chapter 4 - Databases](040-chapter-04.md)
   * Introduction
   * MySQL
   * PostGreSQL
   * Resources
+
 
 [Next >>](010-chapter-01.md)

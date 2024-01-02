@@ -1,4 +1,4 @@
-### Chapter 1 - Databases
+### Chapter 4 - Databases
 
 ## Introduction
 
@@ -61,4 +61,4 @@ services:
 * https://www.postgresql.org
 * https://hub.docker.com/_/postgres
 
-[Next >>](020-chapter-02.md)
+[Next >>](040-chapter-04.md)
