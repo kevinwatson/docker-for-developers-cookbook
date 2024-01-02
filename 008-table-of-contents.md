@@ -8,6 +8,8 @@
   * Resources
 * [Chapter 3 - Console](030-chapter-03.md)
   * Introduction
+  * Programming Languages
+  * Operating Systems
   * Resources
 * [Chapter 4 - Databases](040-chapter-04.md)
   * Introduction
