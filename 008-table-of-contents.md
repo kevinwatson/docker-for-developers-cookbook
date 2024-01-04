@@ -16,6 +16,10 @@
   * MySQL
   * PostGreSQL
   * Resources
-
+* [Chapter 5 - Graphical Apps](050-chapter-05.md)
+  * Introduction
+  * Programming Languages
+  * Operating Systems
+  * Resources
 
 [Next >>](010-chapter-01.md)
