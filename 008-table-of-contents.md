@@ -21,5 +21,8 @@
   * Programming Languages
   * Operating Systems
   * Resources
+* [Chapter 6 - Diagrams](060-chapter-06.md)
+  * Introduction
+  * Resources
 
 [Next >>](010-chapter-01.md)
