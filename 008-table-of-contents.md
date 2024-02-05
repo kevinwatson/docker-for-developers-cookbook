@@ -24,5 +24,9 @@
 * [Chapter 6 - Diagrams](060-chapter-06.md)
   * Introduction
   * Resources
+* [Chapter 7 - Cloud Development](070-chapter-07.md)
+  * Introduction
+  * Resources
+
 
 [Next >>](010-chapter-01.md)
