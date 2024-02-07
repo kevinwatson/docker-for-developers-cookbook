@@ -66,6 +66,6 @@ client.list_objects_v2(Bucket=bucket_name) # list objects in the bucket
 
 ## Resources
 
-* 
+* https://min.io
 
 [Next >>](080-chapter-08.md)
