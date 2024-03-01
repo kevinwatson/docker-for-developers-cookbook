@@ -18,8 +18,6 @@
   * Resources
 * [Chapter 5 - Graphical Apps](050-chapter-05.md)
   * Introduction
-  * Programming Languages
-  * Operating Systems
   * Resources
 * [Chapter 6 - Diagrams](060-chapter-06.md)
   * Introduction
