@@ -35,7 +35,7 @@ Deleted: sha256:190764016d9ed33f2492fe6df1846255ca17bc54984219329cf7b2924d1ff957
 Deleted: sha256:6fc9c0a80ea0dcd8a0ab0fb0e2ea6a2f198a23cb4331903492f15ded1bc23166
 ```
 
-If you would rather not spend time picking through and making decisions on which Docker images need to be deleted and just need to free up some space, you can use the `prune` command below to easily remove unused images.
+If you would rather not spend time picking through and making decisions on which Docker images need to be deleted and just need to free up some hard drive space, you can use the `prune` command below to easily remove unused images.
 
 ```
 docker image prune --all
