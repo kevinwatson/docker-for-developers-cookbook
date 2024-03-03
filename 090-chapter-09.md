@@ -6,7 +6,7 @@ Besides using Docker for tools, background services and games, there are a varie
 
 ### Ascii Maps
 
-This app draws a map of the world using ascii characters. Use your mouse or the following keyboard shortcuts to move and zoom in and out.
+This app draws a map of the world using ascii characters. Use your mouse or the following keyboard shortcuts to move and zoom in and out. It's impressive the amount of data that's in this app. I've been able to zoom down to the city and street where I live.
 
 |Key|Mouse|Description|
 |---|---|---|
