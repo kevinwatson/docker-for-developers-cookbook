@@ -46,5 +46,6 @@ docker run -it pdevine/tetromino
 ## Resources
 
 * https://github.com/DyegoCosta/snake-game
+* https://hub.docker.com/r/pdevine/tetromino
 
 [Next >>](090-chapter-09.md)
