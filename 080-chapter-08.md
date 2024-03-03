@@ -37,6 +37,7 @@ This version of the block-dropping game goes back to its terminal roots. Use the
 |p|Pause|
 |esc|Exit|
 
+To download and run this game, run the command below.
 
 ```
 docker run -it pdevine/tetromino
@@ -46,4 +47,4 @@ docker run -it pdevine/tetromino
 
 * https://github.com/DyegoCosta/snake-game
 
-[Next >>](080-chapter-08.md)
+[Next >>](090-chapter-09.md)
