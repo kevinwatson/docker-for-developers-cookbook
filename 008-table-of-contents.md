@@ -25,6 +25,11 @@
 * [Chapter 7 - Cloud Development](070-chapter-07.md)
   * Introduction
   * Resources
-
+* [Chapter 8 - Games](080-chapter-08.md)
+  * Introduction
+  * Resources
+* [Chapter 9 - Miscellaneous](090-chapter-09.md)
+  * Introduction
+  * Resources
 
 [Next >>](010-chapter-01.md)
