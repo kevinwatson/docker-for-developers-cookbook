@@ -1,6 +1,6 @@
-### Building Distributed Rails Applications
+### Docker for Developers Cookbook
 
-#### Using Protocol Buffers and NATS
+#### A cookbook of Docker scripts and configurations for software developers
 
 All rights reserved
 
