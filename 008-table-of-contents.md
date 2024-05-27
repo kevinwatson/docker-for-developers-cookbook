@@ -33,5 +33,6 @@
 * [Chapter 9 - Miscellaneous](090-chapter-09.md)
   * Introduction
   * Resources
+* [Chapter 10 - Summary](100-chapter-10.md)
 
 [Next >>](010-chapter-01.md)
