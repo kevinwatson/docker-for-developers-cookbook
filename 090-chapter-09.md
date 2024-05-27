@@ -1,4 +1,4 @@
-### Chapter 8 - Miscellaneous
+### Chapter 9 - Miscellaneous
 
 ## Introduction
 
@@ -27,3 +27,5 @@ docker run -it pdevine/mapscii
 ## Resources
 
 * https://hub.docker.com/r/pdevine/mapscii
+
+[Next >>](100-chapter-10.md)
