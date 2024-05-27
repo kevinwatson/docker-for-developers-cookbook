@@ -18,6 +18,8 @@
   * Resources
 * [Chapter 5 - Graphical Apps](050-chapter-05.md)
   * Introduction
+  * Firefox
+  * Eclipse Memory Analyzer
   * Resources
 * [Chapter 6 - Diagrams](060-chapter-06.md)
   * Introduction

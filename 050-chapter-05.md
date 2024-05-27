@@ -4,14 +4,18 @@
 
 Most of the time containers are used for background services that listen on a port. What if you want to run a GUI (graphical user interface) app? There are a few techniques that can be used to run these apps. One of them involves setting up a remote server using [VNC](https://en.wikipedia.org/wiki/Virtual_Network_Computing) to listen on the container's port. Then, using a VNC client on the host, you can view visually interact with the application.
 
-### Firefox
+## Firefox
 
-First, create a directory and add a `Dockerfile`
+Firefox is a web browser that runs on many operating systems. We can use Docker to run a version of Firefox for one operating system on a completely different operating system, for example: testing a website in an Ubuntu (Linux) installation of Firefox on macOS.
+
+To run the Linux based version of Firefox on Windows or macOS: first, create a directory and add a `Dockerfile`.
 
 ```bash
 mkdir ~/firefox-docker
 cd ~/firefox-docker
 ```
+
+Second, copy the following lines into your `Dockerfile` and save the file.
 
 ```bash
 # Dockerfile
@@ -21,7 +25,7 @@ RUN echo "exec firefox" > ~/.xinitrc && chmod +x ~/.xinitrc
 CMD ["/usr/bin/x11vnc", "-create", "-forever"]
 ```
 
-Now add a `docker-compose.yml` file to the same directory
+Third, add a `docker-compose.yml` file to the same directory and copy the contents below into this file.
 
 ```yaml
 # docker-compose.yml
@@ -40,10 +44,63 @@ Now run `docker-compose up` to build and run the container.
 
 The last step is to download and run a VNC client. After installing, connect to `localhost` (the default port of 5900 can be used). You should now see a window with the Firefox app running in the Docker environment.
 
+## Eclipse Memory Analyzer
+
+The Eclipse Memory Analyzer app is a Java application that can be used to analyze Java memory dump files. There's a similar tool, `jhat`, which comes preinstalled with most Java installations but is web based and has less features than the Memory Analyzer app. The Memory Analyzer has specific dependencies which have been defined in the Dockerfile below and by using Docker make it easy to get the app up an running on any operating system.
+
+First, create a directory and add a `Dockerfile`
+
+```bash
+mkdir ~/mat-docker
+cd ~/mat-docker
+```
+
+Second, copy the following lines into your `Dockerfile` and save the file. You'll also need to download a copy of the `Linux X86_64` Memory Analyzer tool to the directory you created above from https://eclipse.dev/mat/downloads.php. You can leave the file in it's zipped form, the Dockerfile will unzip the contents of the archive to a directory in the container.
+
+```bash
+# Dockerfile
+FROM openjdk:23-jdk-slim-bullseye
+RUN apt update && apt install -y x11vnc xvfb unzip libswt-gtk-4-jni
+ENV MAT_FILENAME=MemoryAnalyzer-1.15.0.20231206-linux.gtk.x86_64.zip
+ENV XMX_OPTS="10g"
+ADD $MAT_FILENAME .
+RUN unzip $MAT_FILENAME
+RUN sed -i -e 's/Xmx1024m/Xmx'"$XMX_OPTS"'/g' ./mat/MemoryAnalyzer.ini
+RUN echo "exec ./mat/MemoryAnalyzer" > ~/.xinitrc && chmod +x ~/.xinitrc
+CMD ["/usr/bin/x11vnc", "-create", "-forever"]
+```
+
+Third, add a `docker-compose.yml` file to the same directory and copy the contents below into this file. The `XMX_OPTS` environment variable will set the memory limits of the Memory Analyzer app and will override the value in the `Dockerfile` above when the container starts. Larger hprof files may require adjustments to this value. You may also need to adjust the amount of memory allowed in your Docker environment, usually found under Docker Desktop Settings/Resources.
+
+```yaml
+# docker-compose.yml
+# usage: docker-compose up
+
+version: "3"
+services:
+  gui:
+    environment:
+      XMX_OPTS: 15g
+    build:
+      dockerfile: Dockerfile
+    ports:
+    - "0.0.0.0:5900:5900"
+    volumes:
+    - ./:/hprof_data
+```
+
+Fourth, copy your `.hprof` file to the directory created in step 1 above to make it accessible to the app running in the container.
+
+Now run `docker-compose up` to build and run the container.
+
+Using your VNC client, connect to `localhost` (the default port of 5900 can be used). You should now see a window with the Memory Analyzer app running in the Docker environment.
+
 ## Resources
 
+* https://eclipse.dev/mat/
 * https://en.wikipedia.org/wiki/Virtual_Network_Computing
 * https://www.howtogeek.com/devops/how-to-run-gui-applications-in-a-docker-container/
+* https://www.mozilla.org/en-US/firefox/
 * https://www.realvnc.com/en/connect/download/viewer
 
 [Next >>](040-chapter-04.md)
