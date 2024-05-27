@@ -55,14 +55,14 @@ mkdir ~/mat-docker
 cd ~/mat-docker
 ```
 
-Second, copy the following lines into your `Dockerfile` and save the file. You'll also need to download a copy of the `Linux X86_64` Memory Analyzer tool to the directory you created above from https://eclipse.dev/mat/downloads.php. You can leave the file in it's zipped form, the Dockerfile will unzip the contents of the archive to a directory in the container.
+Second, copy the following lines into your `Dockerfile` and save the file. You'll also need to download a copy of the Linux version of the Memory Analyzer tool to the directory you created above from https://eclipse.dev/mat/downloads.php. The version you download depends on your computer's hardware. Select `x86_64` or an Intel processor or `aarch64` for an ARM processor and modify the `MAT_FILENAME` environment variable to match in the Dockerfile below. You can leave the file in it's zipped form, there's a command in the Dockerfile that will unzip the contents of the archive to a directory in the container.
 
 ```bash
 # Dockerfile
 FROM openjdk:23-jdk-slim-bullseye
 RUN apt update && apt install -y x11vnc xvfb unzip libswt-gtk-4-jni
-ENV MAT_FILENAME=MemoryAnalyzer-1.15.0.20231206-linux.gtk.x86_64.zip
-ENV XMX_OPTS="10g"
+ENV MAT_FILENAME=MemoryAnalyzer-1.15.0.20231206-linux.gtk.x86_64.zip # modify this line if you're using an ARM processor, such as an M1 Mac
+ENV XMX_OPTS="10g" # will be overriden in the docker-compose.yml file
 ADD $MAT_FILENAME .
 RUN unzip $MAT_FILENAME
 RUN sed -i -e 's/Xmx1024m/Xmx'"$XMX_OPTS"'/g' ./mat/MemoryAnalyzer.ini
@@ -93,7 +93,7 @@ Fourth, copy your `.hprof` file to the directory created in step 1 above to make
 
 Now run `docker-compose up` to build and run the container.
 
-Using your VNC client, connect to `localhost` (the default port of 5900 can be used). You should now see a window with the Memory Analyzer app running in the Docker environment.
+Using your VNC client, connect to `localhost`. The default port of `5900` should allow you to connect. You should now see a window with the Memory Analyzer app running in the Docker environment.
 
 ## Resources
 
@@ -103,4 +103,4 @@ Using your VNC client, connect to `localhost` (the default port of 5900 can be u
 * https://www.mozilla.org/en-US/firefox/
 * https://www.realvnc.com/en/connect/download/viewer
 
-[Next >>](040-chapter-04.md)
+[Next >>](060-chapter-06.md)
