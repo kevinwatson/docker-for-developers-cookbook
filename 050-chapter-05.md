@@ -48,14 +48,20 @@ The last step is to download and run a VNC client. After installing, connect to 
 
 The Eclipse Memory Analyzer app is a Java application that can be used to analyze Java memory dump files. There's a similar tool, `jhat`, which comes preinstalled with most Java installations but is web based and has less features than the Memory Analyzer app. The Memory Analyzer has specific dependencies which have been defined in the Dockerfile below and by using Docker make it easy to get the app up an running on any operating system.
 
-First, create a directory and add a `Dockerfile`
+First, create a directory for our app.
 
 ```bash
 mkdir ~/mat-docker
 cd ~/mat-docker
 ```
 
-Second, copy the following lines into your `Dockerfile` and save the file. You'll also need to download a copy of the Linux version of the Memory Analyzer tool to the directory you created above from https://eclipse.dev/mat/downloads.php. The version you download depends on your computer's hardware. Select `x86_64` or an Intel processor or `aarch64` for an ARM processor and modify the `MAT_FILENAME` environment variable to match in the Dockerfile below. You can leave the file in it's zipped form, there's a command in the Dockerfile that will unzip the contents of the archive to a directory in the container.
+Second, add a `Dockerfile`.
+
+```bash
+touch Dockerfile
+```
+
+Third, copy the following lines into your `Dockerfile` using your favorite text editor.
 
 ```bash
 # Dockerfile
@@ -70,7 +76,9 @@ RUN echo "exec ./mat/MemoryAnalyzer" > ~/.xinitrc && chmod +x ~/.xinitrc
 CMD ["/usr/bin/x11vnc", "-create", "-forever"]
 ```
 
-Third, add a `docker-compose.yml` file to the same directory and copy the contents below into this file. The `XMX_OPTS` environment variable will set the memory limits of the Memory Analyzer app and will override the value in the `Dockerfile` above when the container starts. Larger hprof files may require adjustments to this value. You may also need to adjust the amount of memory allowed in your Docker environment, usually found under Docker Desktop Settings/Resources.
+Fourth, download a copy of the Linux version of the Memory Analyzer app to the directory you created above from https://eclipse.dev/mat/downloads.php. The version you download depends on your computer's hardware. Select `x86_64` or an Intel processor or `aarch64` for an ARM processor and modify the `MAT_FILENAME` environment variable to match in the Dockerfile above. You can leave the file in it's zipped form because there's a command in the Dockerfile that will unzip the contents of the archive to a directory in the Docker image.
+
+Fifth, add a `docker-compose.yml` file to the same directory and copy the contents below into this file. The `XMX_OPTS` environment variable will set the memory limits of the Memory Analyzer app and will override the value in the `Dockerfile` above when the container starts. Larger hprof files may require adjustments to this value. You may also need to adjust the amount of memory allowed in your Docker environment, usually found under Docker Desktop Settings/Resources.
 
 ```yaml
 # docker-compose.yml
@@ -89,11 +97,11 @@ services:
     - ./:/hprof_data
 ```
 
-Fourth, copy your `.hprof` file to the directory created in step 1 above to make it accessible to the app running in the container.
+Sixth, copy your `.hprof` file to the directory created in step 1 above to make it accessible to the app running in the container.
 
-Now run `docker-compose up` to build and run the container.
+Seventh, `docker-compose up` to build and run the container.
 
-Using your VNC client, connect to `localhost`. The default port of `5900` should allow you to connect. You should now see a window with the Memory Analyzer app running in the Docker environment.
+Lastly, using your VNC client, connect to `localhost`. The client should default to port `5900` which is defined in the `docker-compose.yml` file above. After a few seconds you should see a window with the Memory Analyzer app running in the Docker environment. From here, you can interact with the graphical interface and open the `.hprof` file by clicking `File/Open Heap Dump...` and navigating to the `/hprof_data` directory.
 
 ## Resources
 
