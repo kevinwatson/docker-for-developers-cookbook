@@ -43,9 +43,45 @@ To download and run this game, run the command below.
 docker run -it pdevine/tetromino
 ```
 
+### Wordle
+
+Wordle is a popular word game in which you try to guess today's five-letter word. There's an open source command line interface (CLI) version that we can download and run.
+
+First, create a directory for the app and move into that directory.
+
+```bash
+mkdir ~/wordle-cli-docker
+cd ~/wordle-cli-docker
+```
+
+Second, add a `Dockerfile`.
+
+```bash
+touch Dockerfile
+```
+
+Third, copy the following lines into your `Dockerfile` using your favorite text editor.
+
+```
+FROM ubuntu:latest
+ENV DEBIAN_FRONTEND=noninteractive
+RUN apt update && apt install -y gnupg2 ca-certificates
+RUN echo "deb https://deb.nimblebun.works/debian stable main" | tee /etc/apt/sources.list.d/nimblebun.list
+RUN apt-key adv --keyserver keyserver.ubuntu.com --recv-keys 033D0D4895F432D1
+RUN apt update && apt install -y wordle-cli
+ENTRYPOINT ["/usr/games/wordle"]
+```
+
+Last, run the commands below to build the image and run the container.
+
+```
+docker build -t wordle-cli . && docker run -it wordle-cli
+```
+
 ## Resources
 
 * https://github.com/DyegoCosta/snake-game
+* https://github.com/nimblebun/wordle-cli
 * https://hub.docker.com/r/pdevine/tetromino
 
 [Next >>](090-chapter-09.md)
