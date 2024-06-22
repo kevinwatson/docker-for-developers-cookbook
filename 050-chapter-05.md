@@ -99,7 +99,7 @@ services:
 
 Sixth, copy your `.hprof` file to the directory created in step 1 above to make it accessible to the app running in the container.
 
-Seventh, `docker-compose up` to build and run the container.
+Seventh, run `docker-compose up` to build and run the container.
 
 Lastly, using your VNC client, connect to `localhost`. The client should default to port `5900` which is defined in the `docker-compose.yml` file above. After a few seconds you should see a window with the Memory Analyzer app running in the Docker environment. From here, you can interact with the graphical interface and open the `.hprof` file by clicking `File/Open Heap Dump...` and navigating to the `/hprof_data` directory.
 
