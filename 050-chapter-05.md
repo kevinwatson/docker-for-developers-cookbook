@@ -4,7 +4,7 @@
 
 Most of the time containers are used for background services that listen on a port. What if you want to run a GUI (graphical user interface) app? There are a few techniques that can be used to run these apps. One of them involves setting up a remote server using [VNC](https://en.wikipedia.org/wiki/Virtual_Network_Computing) to listen on the container's port. Then, using a VNC client on the host, you can view visually interact with the application.
 
-## Firefox
+### Firefox
 
 Firefox is a web browser that runs on many operating systems. We can use Docker to run a version of Firefox for one operating system on a completely different operating system, for example: testing a website in an Ubuntu (Linux) installation of Firefox on macOS.
 
@@ -44,7 +44,7 @@ Now run `docker-compose up` to build and run the container.
 
 The last step is to download and run a VNC client. After installing, connect to `localhost` (the default port of 5900 can be used). You should now see a window with the Firefox app running in the Docker environment.
 
-## Eclipse Memory Analyzer
+### Eclipse Memory Analyzer
 
 The Eclipse Memory Analyzer app is a Java application that can be used to analyze Java memory dump files. There's a similar tool, `jhat`, which comes preinstalled with most Java installations but is web based and has less features than the Memory Analyzer app. The Memory Analyzer has specific dependencies which have been defined in the Dockerfile below and by using Docker make it easy to get the app up an running on any operating system.
 
