@@ -103,10 +103,57 @@ Seventh, `docker-compose up` to build and run the container.
 
 Lastly, using your VNC client, connect to `localhost`. The client should default to port `5900` which is defined in the `docker-compose.yml` file above. After a few seconds you should see a window with the Memory Analyzer app running in the Docker environment. From here, you can interact with the graphical interface and open the `.hprof` file by clicking `File/Open Heap Dump...` and navigating to the `/hprof_data` directory.
 
+### GNOME Mines
+
+GNOME Mines is a Linux-based Minesweeper clone of an old school puzzle game that came installed on early versions of Microsoft Windows. With Docker, we can run the Linux versions anywhere. The objective is to click on the squares on the grid without exposing the mines.
+
+First, create a directory for our app.
+
+```bash
+mkdir ~/minesweeper-docker
+cd ~/minesweeper-docker
+```
+
+Second, add a `Dockerfile`.
+
+```bash
+touch Dockerfile
+```
+
+Third, copy the following lines into your `Dockerfile` using your favorite text editor.
+
+```
+FROM ubuntu:latest
+ENV DEBIAN_FRONTEND=noninteractive
+RUN apt update && apt install -y x11vnc xvfb gnome-mines
+RUN echo "exec ./usr/games/gnome-mines" > ~/.xinitrc && chmod +x ~/.xinitrc
+CMD ["/usr/bin/x11vnc", "-create", "-forever"]
+```
+
+Fourth, add a `docker-compose.yml` file to the same directory and copy the contents below into this file.
+
+```
+# docker-compose.yml
+# usage: docker-compose up
+
+version: "3"
+services:
+  gui:
+    build:
+      dockerfile: Dockerfile
+    ports:
+    - "0.0.0.0:5900:5900"
+```
+
+Fifth, run `docker-compose up` to build and run the container.
+
+Lastly, using your VNC client, connect to `localhost`. The client should default to port `5900` which is defined in the `docker-compose.yml` file above. After a few seconds you should see a window with the Minesweeper clone running in the Docker environment. Enjoy!
+
 ## Resources
 
 * https://eclipse.dev/mat/
 * https://en.wikipedia.org/wiki/Virtual_Network_Computing
+* https://help.gnome.org/users/gnome-mines/stable/
 * https://www.howtogeek.com/devops/how-to-run-gui-applications-in-a-docker-container/
 * https://www.mozilla.org/en-US/firefox/
 * https://www.realvnc.com/en/connect/download/viewer
