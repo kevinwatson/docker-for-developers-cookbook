@@ -8,7 +8,7 @@ Most of the time containers are used for background services that listen on a po
 
 Firefox is a web browser that runs on many operating systems. We can use Docker to run a version of Firefox for one operating system on a completely different operating system, for example: testing a website in an Ubuntu (Linux) installation of Firefox on macOS.
 
-To run the Linux based version of Firefox on Windows or macOS: first, create a directory and add a `Dockerfile`.
+To run the Linux based version of Firefox on Windows or macOS: first, create a directory and add a `Dockerfile` and switch to that directory.
 
 ```bash
 mkdir ~/firefox-docker
@@ -48,7 +48,7 @@ The last step is to download and run a VNC client. After installing, connect to 
 
 The Eclipse Memory Analyzer app is a Java application that can be used to analyze Java memory dump files. There's a similar tool, `jhat`, which comes preinstalled with most Java installations but is web based and has less features than the Memory Analyzer app. The Memory Analyzer has specific dependencies which have been defined in the Dockerfile below and by using Docker make it easy to get the app up an running on any operating system.
 
-First, create a directory for our app.
+First, create a directory for the app and move into that directory.
 
 ```bash
 mkdir ~/mat-docker
@@ -107,7 +107,7 @@ Lastly, using your VNC client, connect to `localhost`. The client should default
 
 GNOME Mines is a Linux-based clone of an old school puzzle game named Minesweeper that came installed on early versions of Microsoft Windows. With Docker, we can run the Linux versions anywhere. The objective is to click on the squares on the grid without exposing the mines.
 
-First, create a directory for our app.
+First, create a directory for the app and move into that directory.
 
 ```bash
 mkdir ~/minesweeper-docker
