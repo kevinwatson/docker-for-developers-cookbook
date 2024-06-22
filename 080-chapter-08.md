@@ -2,7 +2,7 @@
 
 ## Introduction
 
-Besides using Docker for tools and background services, computer games are just as portable.
+Besides using Docker for tools and background services, computer games are just as portable. The following games are console based. In case you missed it, there's also a few graphical games in [chapter 5](050-chapter-05.md).
 
 ### Snake
 
