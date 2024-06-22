@@ -105,7 +105,7 @@ Lastly, using your VNC client, connect to `localhost`. The client should default
 
 ### GNOME Mines
 
-GNOME Mines is a Linux-based Minesweeper clone of an old school puzzle game that came installed on early versions of Microsoft Windows. With Docker, we can run the Linux versions anywhere. The objective is to click on the squares on the grid without exposing the mines.
+GNOME Mines is a Linux-based clone of an old school puzzle game named Minesweeper that came installed on early versions of Microsoft Windows. With Docker, we can run the Linux versions anywhere. The objective is to click on the squares on the grid without exposing the mines.
 
 First, create a directory for our app.
 
