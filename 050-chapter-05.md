@@ -110,8 +110,8 @@ GNOME Mines is a Linux-based clone of an old school puzzle game named Minesweepe
 First, create a directory for the app and move into that directory.
 
 ```bash
-mkdir ~/minesweeper-docker
-cd ~/minesweeper-docker
+mkdir ~/gnome-mines-docker
+cd ~/gnome-mines-docker
 ```
 
 Second, add a `Dockerfile`.
