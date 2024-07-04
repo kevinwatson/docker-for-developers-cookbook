@@ -1,4 +1,4 @@
-### Chapter 10 - Summary
+### Chapter 11 - Summary
 
 As we've seen, Linux containers hosted in Docker are a great way to improve developer productivity, reduce installation complexity and reduce clutter on your filesystem. As long as Docker runs on your developer computer, you can run any of the tools described in this guide.
 
