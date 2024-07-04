@@ -1,4 +1,4 @@
-### Chapter 3 - Console
+### Chapter 3 - Consoles
 
 ## Introduction
 

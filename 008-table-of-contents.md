@@ -6,7 +6,7 @@
 * [Chapter 2 - Docker Compose](020-chapter-02.md)
   * Introduction
   * Resources
-* [Chapter 3 - Console](030-chapter-03.md)
+* [Chapter 3 - Consoles](030-chapter-03.md)
   * Introduction
   * Programming Languages
   * Operating Systems
