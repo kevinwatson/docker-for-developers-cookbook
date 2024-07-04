@@ -14,7 +14,7 @@
 * [Chapter 4 - Databases](040-chapter-04.md)
   * Introduction
   * Resources
-* [Chapter 5 - Tools](050-chapter-05.md)
+* [Chapter 5 - Debugging Tools](050-chapter-05.md)
   * Introduction
   * Resources
 * [Chapter 6 - Diagrams](060-chapter-06.md)

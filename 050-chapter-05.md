@@ -1,4 +1,4 @@
-### Chapter 5 - Tools
+### Chapter 5 - Debugging Tools
 
 ## Introduction
 
