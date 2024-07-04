@@ -243,7 +243,7 @@ Lastly, using your VNC client, connect to `localhost`. The client should default
 
 ### GNOME Sodoku
 
-Sodoku is the GNOME version of the Japanese logic game with the same name. The objective is to fill the empty cells with a number between 1 and 9 so that no number is repeated on a row.
+Sodoku is the GNOME version of the Japanese logic game with the same name. The objective is to fill the empty cells with a number between 1 and 9 so that no number is repeated on a row, column or 3x3 box.
 
 First, create a directory for the app and move into that directory.
 
