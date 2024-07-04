@@ -26,7 +26,7 @@
 * [Chapter 8 - Games](080-chapter-08.md)
   * Introduction
   * Resources
-* [Chapter 9 - Miscellaneous](090-chapter-09.md)
+* [Chapter 10 - Miscellaneous](100-chapter-10.md)
   * Introduction
   * Resources
 * [Chapter 11 - Summary](110-chapter-11.md)
