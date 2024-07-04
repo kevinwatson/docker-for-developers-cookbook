@@ -1,4 +1,4 @@
-### Chapter 5 - Graphical Apps
+### Chapter 5 - Tools
 
 ## Introduction
 

@@ -16,7 +16,7 @@
   * MySQL
   * PostgreSQL
   * Resources
-* [Chapter 5 - Graphical Apps](050-chapter-05.md)
+* [Chapter 5 - Tools](050-chapter-05.md)
   * Introduction
   * Resources
 * [Chapter 6 - Diagrams](060-chapter-06.md)
