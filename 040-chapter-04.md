@@ -4,11 +4,11 @@
 
 If containers are ephemeral, why would anyone run a database (a persistent data store) in a container? There are multiple answers to this question. Perhaps you need the data to persist (use a volume), or you just need to test out a feature and you don't need to persist the data. In this chapter we'll provide examples for both.
 
-## MySQL
+### MySQL
 
-## PostgreSQL
+### PostgreSQL
 
-### Ephemeral (non-persistent) Data
+#### Ephemeral (non-persistent) Data
 
 ```bash
 mkdir -p ~/projects/postgres
@@ -31,7 +31,7 @@ services:
       - "5432:5432"
 ```
 
-### Persistent (non-ephemeral) Data
+#### Persistent (non-ephemeral) Data
 
 ```bash
 mkdir -p ~/projects/postgres/data

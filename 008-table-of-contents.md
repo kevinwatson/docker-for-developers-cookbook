@@ -13,8 +13,6 @@
   * Resources
 * [Chapter 4 - Databases](040-chapter-04.md)
   * Introduction
-  * MySQL
-  * PostgreSQL
   * Resources
 * [Chapter 5 - Tools](050-chapter-05.md)
   * Introduction
