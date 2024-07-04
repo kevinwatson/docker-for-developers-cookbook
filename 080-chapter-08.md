@@ -170,52 +170,6 @@ Fifth, run `docker-compose up` to build and run the container.
 
 Lastly, using your VNC client, connect to `localhost`. The client should default to port `5900` which is defined in the `docker-compose.yml` file above. After a few seconds you should see a window with the Crack Attack! running in the Docker environment. Game play and controls can be found on the author's website here: https://aluminumangel.org/attack/#game%20play
 
-### Crack Attack!
-
-Crack Attack! is a clone of a Super Nintendo game named Tetris Attack. The objective is to eliminate the blocks by lining up similar colors and before you run out of time.
-
-First, create a directory for the app and move into that directory.
-
-```bash
-mkdir ~/crack-attack-docker
-cd ~/crack-attack-docker
-```
-
-Second, add a `Dockerfile`.
-
-```bash
-touch Dockerfile
-```
-
-Third, copy the following lines into your `Dockerfile` using your favorite text editor.
-
-```
-FROM ubuntu:latest
-ENV DEBIAN_FRONTEND=noninteractive
-RUN apt update && apt install -y x11vnc xvfb crack-attack
-RUN echo "exec ./usr/games/crack-attack" > ~/.xinitrc && chmod +x ~/.xinitrc
-CMD ["/usr/bin/x11vnc", "-create", "-forever"]
-```
-
-Fourth, add a `docker-compose.yml` file to the same directory and copy the contents below into this file.
-
-```
-# docker-compose.yml
-# usage: docker-compose up
-
-version: "3"
-services:
-  gui:
-    build:
-      dockerfile: Dockerfile
-    ports:
-    - "0.0.0.0:5900:5900"
-```
-
-Fifth, run `docker-compose up` to build and run the container.
-
-Lastly, using your VNC client, connect to `localhost`. The client should default to port `5900` which is defined in the `docker-compose.yml` file above. After a few seconds you should see a window with the Crack Attack! running in the Docker environment. Game play and controls can be found on the author's website here: https://aluminumangel.org/attack/#game%20play
-
 ### GNOME Sodoku
 
 Sodoku is the GNOME version of the Japanese logic game with the same name. The objective is to fill the empty cells with a number between 1 and 9 so that no number is repeated on a row, column or 3x3 box.
