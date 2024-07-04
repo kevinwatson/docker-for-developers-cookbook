@@ -26,6 +26,9 @@
 * [Chapter 8 - Games](080-chapter-08.md)
   * Introduction
   * Resources
+* [Chapter 9 - Browsers](090-chapter-09.md)
+  * Introduction
+  * Resources
 * [Chapter 10 - Miscellaneous](100-chapter-10.md)
   * Introduction
   * Resources

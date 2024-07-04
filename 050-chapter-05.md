@@ -4,46 +4,6 @@
 
 Most of the time containers are used for background services that listen on a port. What if you want to run a GUI (graphical user interface) app? There are a few techniques that can be used to run these apps. One of them involves setting up a remote server using [VNC](https://en.wikipedia.org/wiki/Virtual_Network_Computing) to listen on the container's port. Then, using a VNC client on the host, you can view visually interact with the application.
 
-### Firefox
-
-Firefox is a web browser that runs on many operating systems. We can use Docker to run a version of Firefox for one operating system on a completely different operating system, for example: testing a website in an Ubuntu (Linux) installation of Firefox on macOS.
-
-To run the Linux based version of Firefox on Windows or macOS: first, create a directory and add a `Dockerfile` and switch to that directory.
-
-```bash
-mkdir ~/firefox-docker
-cd ~/firefox-docker
-```
-
-Second, copy the following lines into your `Dockerfile` and save the file.
-
-```bash
-# Dockerfile
-FROM ubuntu:latest
-RUN apt update && apt install -y x11vnc xvfb firefox
-RUN echo "exec firefox" > ~/.xinitrc && chmod +x ~/.xinitrc
-CMD ["/usr/bin/x11vnc", "-create", "-forever"]
-```
-
-Third, add a `docker-compose.yml` file to the same directory and copy the contents below into this file.
-
-```yaml
-# docker-compose.yml
-# usage: docker-compose up
-
-version: "3"
-services:
-  gui:
-    build:
-      dockerfile: Dockerfile
-    ports:
-    - "0.0.0.0:5900:5900"
-```
-
-Now run `docker-compose up` to build and run the container.
-
-The last step is to download and run a VNC client. After installing, connect to `localhost` (the default port of 5900 can be used). You should now see a window with the Firefox app running in the Docker environment.
-
 ### Eclipse Memory Analyzer
 
 The Eclipse Memory Analyzer app is a Java application that can be used to analyze Java memory dump files. There's a similar tool, `jhat`, which comes preinstalled with most Java installations but is web based and has less features than the Memory Analyzer app. The Memory Analyzer has specific dependencies which have been defined in the Dockerfile below and by using Docker make it easy to get the app up an running on any operating system.
@@ -108,7 +68,6 @@ Lastly, using your VNC client, connect to `localhost`. The client should default
 * https://eclipse.dev/mat/
 * https://en.wikipedia.org/wiki/Virtual_Network_Computing
 * https://www.howtogeek.com/devops/how-to-run-gui-applications-in-a-docker-container/
-* https://www.mozilla.org/en-US/firefox/
 * https://www.realvnc.com/en/connect/download/viewer
 
 [Next >>](060-chapter-06.md)
