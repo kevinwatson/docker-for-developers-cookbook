@@ -170,15 +170,15 @@ Fifth, run `docker-compose up` to build and run the container.
 
 Lastly, using your VNC client, connect to `localhost`. The client should default to port `5900` which is defined in the `docker-compose.yml` file above. After a few seconds you should see a window with the Crack Attack! running in the Docker environment. Game play and controls can be found on the author's website here: https://aluminumangel.org/attack/#game%20play
 
-### GNOME Sodoku
+### GNOME Sudoku
 
-Sodoku is the GNOME version of the Japanese logic game with the same name. The objective is to fill the empty cells with a number between 1 and 9 so that no number is repeated on a row, column or 3x3 box.
+Sudoku is the GNOME version of the Japanese logic game with the same name. The objective is to fill the empty cells with a number between 1 and 9 so that no number is repeated on a row, column or 3x3 box.
 
 First, create a directory for the app and move into that directory.
 
 ```bash
-mkdir ~/gnome-sodoku-docker
-cd ~/gnome-sodoku-docker
+mkdir ~/gnome-sudoku-docker
+cd ~/gnome-sudoku-docker
 ```
 
 Second, add a `Dockerfile`.
@@ -215,12 +215,12 @@ services:
 Note: As an alternative to the docker-compose.yml file above, you can run the following docker commands:
 
 ```
-docker build -t gnome-sodoku . && docker run -p "0.0.0.0:5900:5900" gnome-sodoku
+docker build -t gnome-sudoku . && docker run -p "0.0.0.0:5900:5900" gnome-sudoku
 ```
 
 Fifth, run `docker-compose up` to build and run the container.
 
-Lastly, using your VNC client, connect to `localhost`. The client should default to port `5900` which is defined in the `docker-compose.yml` file above. After a few seconds you should see a window with the GNOME Sodoku running in the Docker environment. Game play and controls can be found here: https://wiki.gnome.org/Apps/Sudoku
+Lastly, using your VNC client, connect to `localhost`. The client should default to port `5900` which is defined in the `docker-compose.yml` file above. After a few seconds you should see a window with the GNOME Sudoku running in the Docker environment. Game play and controls can be found here: https://wiki.gnome.org/Apps/Sudoku
 
 ## Resources
 
