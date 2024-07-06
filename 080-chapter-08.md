@@ -105,22 +105,11 @@ RUN echo "exec ./usr/games/gnome-mines" > ~/.xinitrc && chmod +x ~/.xinitrc
 CMD ["/usr/bin/x11vnc", "-create", "-forever"]
 ```
 
-Fourth, add a `docker-compose.yml` file to the same directory and copy the contents below into this file.
+Fourth, run the following docker commands to build and tag the image and run the container.
 
 ```
-# docker-compose.yml
-# usage: docker-compose up
-
-version: "3"
-services:
-  gui:
-    build:
-      dockerfile: Dockerfile
-    ports:
-    - "0.0.0.0:5900:5900"
+docker build -t gnome-mines . && docker run -p "0.0.0.0:5900:5900" gnome-mines
 ```
-
-Fifth, run `docker-compose up` to build and run the container.
 
 Lastly, using your VNC client (you can download the viewer [here](https://www.realvnc.com/en/connect/download/viewer)), connect to `localhost`. The client should default to port `5900` which is defined in the `docker-compose.yml` file above. After a few seconds you should see a window with the Minesweeper clone running in the Docker environment. Enjoy!
 
@@ -151,22 +140,11 @@ RUN echo "exec ./usr/games/crack-attack" > ~/.xinitrc && chmod +x ~/.xinitrc
 CMD ["/usr/bin/x11vnc", "-create", "-forever"]
 ```
 
-Fourth, add a `docker-compose.yml` file to the same directory and copy the contents below into this file.
+Fourth, run the following docker commands to build and tag the image and run the container.
 
 ```
-# docker-compose.yml
-# usage: docker-compose up
-
-version: "3"
-services:
-  gui:
-    build:
-      dockerfile: Dockerfile
-    ports:
-    - "0.0.0.0:5900:5900"
+docker build -t crack-attack . && docker run -p "0.0.0.0:5900:5900" crack-attack
 ```
-
-Fifth, run `docker-compose up` to build and run the container.
 
 Lastly, using your VNC client, connect to `localhost`. The client should default to port `5900` which is defined in the `docker-compose.yml` file above. After a few seconds you should see a window with the Crack Attack! running in the Docker environment. Game play and controls can be found on the author's website here: https://aluminumangel.org/attack/#game%20play
 
@@ -197,22 +175,7 @@ RUN echo "exec ./usr/games/gnome-sudoku" > ~/.xinitrc && chmod +x ~/.xinitrc
 CMD ["/usr/bin/x11vnc", "-create", "-forever"]
 ```
 
-Fourth, add a `docker-compose.yml` file to the same directory and copy the contents below into this file.
-
-```
-# docker-compose.yml
-# usage: docker-compose up
-
-version: "3"
-services:
-  gui:
-    build:
-      dockerfile: Dockerfile
-    ports:
-    - "0.0.0.0:5900:5900"
-```
-
-Note: As an alternative to the docker-compose.yml file above, you can run the following docker commands:
+Fourth, run the following docker commands to build and tag the image and run the container.
 
 ```
 docker build -t gnome-sudoku . && docker run -p "0.0.0.0:5900:5900" gnome-sudoku
