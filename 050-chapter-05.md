@@ -33,7 +33,7 @@ ADD $MAT_FILENAME .
 RUN unzip $MAT_FILENAME
 RUN sed -i -e 's/Xmx1024m/Xmx'"$XMX_OPTS"'/g' ./mat/MemoryAnalyzer.ini
 RUN echo "exec ./mat/MemoryAnalyzer" > ~/.xinitrc && chmod +x ~/.xinitrc
-CMD ["/usr/bin/x11vnc", "-create", "-forever"]
+CMD ["/usr/bin/x11vnc", "-create", "-forever", "-clip", "1030x740+0+0"]
 ```
 
 Fourth, download a copy of the Linux version of the Memory Analyzer app to the directory you created above from https://eclipse.dev/mat/downloads.php. The version you download depends on your computer's hardware. Select `x86_64` or an Intel processor or `aarch64` for an ARM processor and modify the `MAT_FILENAME` environment variable to match in the Dockerfile above. You can leave the file in it's zipped form because there's a command in the Dockerfile that will unzip the contents of the archive to a directory in the Docker image.

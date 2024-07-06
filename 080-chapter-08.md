@@ -102,7 +102,7 @@ FROM ubuntu:latest
 ENV DEBIAN_FRONTEND=noninteractive
 RUN apt update && apt install -y x11vnc xvfb gnome-mines
 RUN echo "exec ./usr/games/gnome-mines" > ~/.xinitrc && chmod +x ~/.xinitrc
-CMD ["/usr/bin/x11vnc", "-create", "-forever"]
+CMD ["/usr/bin/x11vnc", "-create", "-forever", "-clip", "610x500+0+0"]
 ```
 
 Fourth, run the following docker commands to build and tag the image and run the container.
@@ -137,7 +137,7 @@ FROM ubuntu:latest
 ENV DEBIAN_FRONTEND=noninteractive
 RUN apt update && apt install -y x11vnc xvfb crack-attack
 RUN echo "exec ./usr/games/crack-attack" > ~/.xinitrc && chmod +x ~/.xinitrc
-CMD ["/usr/bin/x11vnc", "-create", "-forever"]
+CMD ["/usr/bin/x11vnc", "-create", "-forever", "-clip", "580x400+0+0"]
 ```
 
 Fourth, run the following docker commands to build and tag the image and run the container.
@@ -172,7 +172,7 @@ FROM ubuntu:latest
 ENV DEBIAN_FRONTEND=noninteractive
 RUN apt update && apt install -y x11vnc xvfb gnome-sudoku
 RUN echo "exec ./usr/games/gnome-sudoku" > ~/.xinitrc && chmod +x ~/.xinitrc
-CMD ["/usr/bin/x11vnc", "-create", "-forever"]
+CMD ["/usr/bin/x11vnc", "-create", "-forever", "-clip", "740x700+0+0"]
 ```
 
 Fourth, run the following docker commands to build and tag the image and run the container.
