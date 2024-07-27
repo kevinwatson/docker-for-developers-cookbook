@@ -2,7 +2,7 @@
 
 ## Introduction
 
-There have long been command line tools and websites available that developers can use to generate diagrams, but what if you want to keep your personal or company documentation private and ou tof the cloud? Docker allows us to run these tools locally and keep our documentation on our development machines.
+There have long been command line tools and websites available that developers can use to generate diagrams, but what if you want to keep your personal or company documentation private and out of the cloud? Docker allows us to run these tools locally and keep our documentation on our development machines.
 
 ### Mermaid
 
