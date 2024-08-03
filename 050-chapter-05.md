@@ -8,6 +8,8 @@ Most of the time containers are used for background services that listen on a po
 
 The Eclipse Memory Analyzer app is a Java application that can be used to analyze Java memory dump files. There's a similar tool, `jhat`, which comes preinstalled with most Java installations but is web based and has fewer features than the Memory Analyzer app. The Memory Analyzer app is a graphical app with lots of features and visualizations. Even though this app has specific requirements which could make it difficult to install and run on your operating system, Docker makes it easy to get this app running on any system.
 
+![A screenshot of the Eclipse Memory Analyzer Tool](images/memory-analyzer.png "Eclipse Memory Analyzer")
+
 First, create a directory for the app and move into that directory.
 
 ```bash

@@ -6,7 +6,11 @@ Besides using Docker for tools and background services, computer games are just 
 
 ### Snake
 
-Snake is an old-school terminal-based game where you use your keyboard to control a snake that eats objects on the screen. Use the keyboard controls below to play.
+Snake is an old-school terminal-based game where you use your keyboard to control a snake that eats objects on the screen.
+
+![A screenshot of the snake game in a console](images/snake-game.png "Snake Game")
+
+Use the keyboard controls below to play.
 
 |Key|Description|
 |---|---|
@@ -23,9 +27,13 @@ To download and play this game, run the docker command below.
 docker run -ti dyego/snake-game
 ```
 
-### Tetris
+### Tetromino
 
-This version of the block-dropping game goes back to its terminal roots. Use the following keyboard controls to play.
+This version of the block-dropping game Tetris goes back to its terminal roots.
+
+![A screenshot of the Tetromino Tetris clone running in a console](images/tetromino.png "Tetromino Game")
+
+Use the following keyboard controls to play.
 
 |Key|Description|
 |---|---|
@@ -46,6 +54,8 @@ docker run -it pdevine/tetromino
 ### Wordle
 
 Wordle is a popular word game in which you try to guess today's five-letter word. There's an open source command line interface (CLI) version that we can download and run.
+
+![A screenshot of the Wordle clone running in a console](images/wordle-console.png "Wordle Game")
 
 First, create a directory for the app and move into that directory.
 
@@ -80,7 +90,9 @@ docker build -t wordle-cli . && docker run -it wordle-cli
 
 ### GNOME Mines
 
-GNOME Mines is a Linux-based clone of an old school puzzle game named Minesweeper that came installed on early versions of Microsoft Windows. With Docker, we can run the Linux versions anywhere. The objective is to click on the squares on the grid without exposing the mines.
+GNOME Mines is a Linux-based clone of an old school puzzle game named Minesweeper that came installed on early versions of Microsoft Windows. With Docker, we can run the Linux versions anywhere. The objective is to uncover the rest of the squares without exposing the mines.
+
+![A screenshot of a Mines game](images/gnome-mines.png "GNOME Mines Game")
 
 First, create a directory for the app and move into that directory.
 
@@ -117,6 +129,8 @@ Lastly, using your VNC client (you can download the viewer [here](https://www.re
 
 Crack Attack! is a clone of a Super Nintendo game named Tetris Attack. The objective is to eliminate the blocks by lining up similar colors and before you run out of time.
 
+![A screenshot of the game Crack Attack that is a clone of the Tetris Attack game](images/crack-attack.png "Crack Attack")
+
 First, create a directory for the app and move into that directory.
 
 ```bash
@@ -151,6 +165,8 @@ Lastly, using your VNC client, connect to `localhost`. The client should default
 ### GNOME Sudoku
 
 Sudoku is the GNOME version of the Japanese logic game with the same name. The objective is to fill the empty cells with a number between 1 and 9 so that no number is repeated on a row, column or 3x3 box.
+
+![A screenshot of the game Sudoku](images/gnome-soduku.png "GNOME Sudoku")
 
 First, create a directory for the app and move into that directory.
 
