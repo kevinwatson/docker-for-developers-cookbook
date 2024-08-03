@@ -8,6 +8,8 @@ Ever wished you could quickly check a website in a different browser without ins
 
 Firefox is a web browser that runs on many operating systems. We can use Docker to run a version of Firefox for one operating system on a completely different operating system, for example: testing a website in an Ubuntu (Linux) installation of Firefox on macOS.
 
+![A screenshot of the Firefox web browser](images/firefox-browser.png "Firefox Browser")
+
 To run the Linux based version of Firefox on Windows or macOS: first, create a directory and add a `Dockerfile` and switch to that directory.
 
 ```bash
