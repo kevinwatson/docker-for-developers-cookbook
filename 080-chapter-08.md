@@ -166,7 +166,7 @@ Lastly, using your VNC client, connect to `localhost`. The client should default
 
 Sudoku is the GNOME version of the Japanese logic game with the same name. The objective is to fill the empty cells with a number between 1 and 9 so that no number is repeated on a row, column or 3x3 box.
 
-![A screenshot of the game Sudoku](images/gnome-soduku.png "GNOME Sudoku")
+![A screenshot of the game Sudoku](images/gnome-sudoku.png "GNOME Sudoku")
 
 First, create a directory for the app and move into that directory.
 
