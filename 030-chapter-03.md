@@ -15,6 +15,25 @@ Each docker command below uses the `latest` tag. This tag can be replaced with a
 
 ## Programming Languages
 
+### Go
+
+Import the Yaegi package
+
+```dockerfile
+# Dockerfile
+FROM golang:1.25
+
+RUN go install github.com/traefik/yaegi/cmd/yaegi@latest
+
+CMD ["yaegi"]
+```
+
+Build and run the container
+
+```bash
+docker build -t console . && docker run --rm -it console yaegi
+```
+
 ### Node/JavaScript
 
 ```bash
