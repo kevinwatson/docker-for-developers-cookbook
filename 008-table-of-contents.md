@@ -2,8 +2,10 @@
 
 * [Chapter 1 - Docker](010-chapter-01.md)
   * Introduction
+  * Maintenance
+  * Docker Compose
   * Resources
-* [Chapter 2 - Docker Compose](020-chapter-02.md)
+* [Chapter 2 - Apple Container](020-chapter-02.md)
   * Introduction
   * Resources
 * [Chapter 3 - Consoles](030-chapter-03.md)
